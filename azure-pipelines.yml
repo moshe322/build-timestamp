@@ -6,11 +6,11 @@ stages:
   jobs:
   - job: building job
     steps:
-    - build passed
+    - echo 'build jobs'
 - stage: test
   jobs:
   - job: testing job
     steps:
-    - tested all cases
+    - echo 'test jobs'
 
     
