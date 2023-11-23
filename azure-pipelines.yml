@@ -4,7 +4,7 @@ trigger:
 pool: MOSHE
 
 steps:
-- task: UseJavaVersion@1
+- task: mvn compilation
   inputs:
     versionSpec: '11'
 
