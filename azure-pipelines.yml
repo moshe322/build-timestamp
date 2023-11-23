@@ -1,12 +1,16 @@
 trigger:
 - main  # Specify the branch you want to trigger the pipeline on
-
 pool: MOSHE
+stages:
+- stage: build
+  jobs:
+  - job: building job
+    steps:
+    - downloadBuild
+- stage: test
+  jobs:
+  - job: testing job
+    steps:
+    - all tests
 
-steps:
-- task: mvn compilation
-  inputs:
-    versionSpec: '11'
-
-- script: 'mvn clean package'
-  displayName: 'Maven Package'
+    
