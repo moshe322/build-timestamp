@@ -4,13 +4,19 @@ pool: MOSHE
 stages:
 - stage: build
   jobs:
-  - job: building job
+  - job: buildingjob
+    pool:
+      name: MOSHE
     steps:
-    - echo 'build jobs'
+    - script: echo Hello World!
+      displayName: 'Run a One Line Script'
 - stage: test
   jobs:
-  - job: testing job
+  - job: testingjob
+    pool:
+      name: MOSHE
     steps:
-    - echo 'test jobs'
+    - script: echo Thammuluri Moshe
+      displayName: 'Run as Thammuluri Moshe'
 
     
